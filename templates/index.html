@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine Quality Predictor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="my-5">Wine Quality Prediction</h2>
+        
+        <form method="POST" action="/predict">
+            <div class="form-group">
+                <label for="fixed_acidity">Fixed Acidity</label>
+                <input type="number" class="form-control" name="fixed acidity" id="fixed_acidity" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="volatile_acidity">Volatile Acidity</label>
+                <input type="number" class="form-control" name="volatile acidity" id="volatile_acidity" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="citric_acid">Citric Acid</label>
+                <input type="number" class="form-control" name="citric acid" id="citric_acid" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="residual_sugar">Residual Sugar</label>
+                <input type="number" class="form-control" name="residual sugar" id="residual_sugar" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="chlorides">Chlorides</label>
+                <input type="number" class="form-control" name="chlorides" id="chlorides" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="free_sulfur_dioxide">Free Sulfur Dioxide</label>
+                <input type="number" class="form-control" name="free sulfur dioxide" id="free_sulfur_dioxide" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="total_sulfur_dioxide">Total Sulfur Dioxide</label>
+                <input type="number" class="form-control" name="total sulfur dioxide" id="total_sulfur_dioxide" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="density">Density</label>
+                <input type="number" class="form-control" name="density" id="density" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="pH">pH</label>
+                <input type="number" class="form-control" name="pH" id="pH" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="sulphates">Sulphates</label>
+                <input type="number" class="form-control" name="sulphates" id="sulphates" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="alcohol">Alcohol</label>
+                <input type="number" class="form-control" name="alcohol" id="alcohol" step="any" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict Quality</button>
+        </form>
+
+        {% if prediction_text %}
+        <h3 class="mt-5">{{ prediction_text }}</h3>
+        {% endif %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
