@@ -4,7 +4,7 @@ from flask import Flask, render_template, request
 from sklearn.preprocessing import MinMaxScaler
 
 # Initialize Flask app
-app = Flask(__name__)
+app = Flask(__name__, template_folder='.')
 
 # Load the model, scaler, and input columns
 wine_params = joblib.load('wine.joblib')
